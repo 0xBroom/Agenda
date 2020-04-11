@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TalkService} from '../talk.service';
+import {Http} from '@angular/http';
 
 @Component({
   selector: 'app-talks',
@@ -13,17 +15,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TalksComponent implements OnInit {
 
-  talks: Array<any> = [
-    {title: 'Angular rocks!', date: new Date()},
-    {title: 'Android 101', date: new Date()}
-  ];
+  talks;
 
-  style = {
-      'background-color': 'lightgray',
-      padding: '10px'
-    };
-
-  constructor() {}
+  constructor(private talkService: TalkService, public network: Http) {
+    this.talks = this.talkService.getAllTalks();
+  }
 
   ngOnInit(): void {}
 

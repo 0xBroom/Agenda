@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TalksComponent } from './talks/talks.component';
 import { TalkComponent } from './talk/talk.component';
+import {TalkService} from './talk.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { TalkComponent } from './talk/talk.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TalkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,8 +23,7 @@ export class TalkComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onClick(){
     console.log(this.talk);
